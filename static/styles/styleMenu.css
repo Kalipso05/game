@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(50, 50, 50);
+}
+
+nav{
+    background-color: rgb(30, 30, 30);
+    color: rgb(188, 186, 186);
+    font-family: cursive;
+}
+
+ul{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul>li{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+ul>li>span{
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+
+ul>li>img{
+    width: 3em;
+    transition: all 0.3s;
+}
+
+ul>li>span:hover{
+    transform: scale(110%);
+    transition: all 0.3s;
+}
+
+ul>li>img:hover{
+    transform: scale(110%);
+    transition: all 0.3s;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.enemy>img{
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.enemy>img:hover{
+    cursor: pointer;
+}
