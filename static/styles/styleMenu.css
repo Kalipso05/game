@@ -63,3 +63,10 @@ section{
 .enemy>img:hover{
     cursor: pointer;
 }
+
+@media (max-width: 570px) {
+    ul{
+        flex-direction: column;
+        align-items: normal;
+    }
+}
