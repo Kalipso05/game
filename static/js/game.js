@@ -8,7 +8,8 @@ let moneyCount = 0;
 
 enemy.addEventListener("mousedown", () => {
     enemy.style.transform = "scale(110%)";
-    moneyCount++;
+    if(isNaN(parseInt(localStorage.getItem("tapUp")))) localStorage.setItem("tapUp", "1");
+    moneyCount += parseInt(localStorage.getItem("tapUp"));
     money.textContent = `Баланс ${moneyCount}`;
     playSound("puk");
 });

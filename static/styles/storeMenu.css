@@ -1,0 +1,35 @@
+#store:hover{
+    cursor: pointer;
+}
+
+.store{
+    display: none;
+    position: absolute;
+    left: 29%;
+    top: 50%;
+    width: 50%;
+    
+}
+.store .boost{
+    color: white;
+    background-color: rgb(68, 68, 68);
+    display: flex;
+    align-items: center;
+    
+}
+
+.store .boost>span{
+    margin-left: 5px;
+    padding: 10px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 10px;
+}
+
+.store .boost>span:hover{
+    cursor: pointer;
+}
+
+.store .boost>img{
+    width: 50px;
+    padding: 10px;
+}
