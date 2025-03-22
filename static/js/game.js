@@ -5,6 +5,7 @@ const lvl = document.getElementById("lvl");
 
 
 let audio = null;
+let touchTimeout;
 
 startGame();
 
@@ -14,6 +15,8 @@ function startGame(){
     lvl.textContent = (localStorage.getItem("lvl") == null) ? 1 : localStorage.getItem("lvl");
     
 }
+
+
 
 function handlePress() {
     enemy.src = "../images/cat_laught.png";
@@ -35,6 +38,7 @@ function handlePress() {
 }
 
 function handleRelease() {
+    clearTimeout(touchTimeout); // Очищаем таймер, если отпустили раньше времени
     enemy.style.transform = "scale(100%)";
     enemy.src = "../images/cat_idle.png";
     audio.pause();
@@ -44,8 +48,17 @@ function handleRelease() {
 enemy.addEventListener("mousedown", handlePress);
 enemy.addEventListener("mouseup", handleRelease);
 
-// Добавляем обработчики для мобильных устройств
-enemy.addEventListener("touchstart", handlePress);
+// Добавляем обработчики для мобильных устройств с задержкой
+enemy.addEventListener("touchstart", (event) => {
+    event.preventDefault();
+    touchTimeout = setTimeout(handlePress, 300);
+});
+
+enemy.addEventListener("touchend", handleRelease);
+enemy.addEventListener("contextmenu", (event) => {
+    event.preventDefault(); 
+});
+
 enemy.addEventListener("touchend", handleRelease);
 export const playSound = (name) =>{
     audio = new Audio(`../sound/${name}.mp3`)
