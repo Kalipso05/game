@@ -58,6 +58,7 @@ section{
 .enemy>img{
     width: 100%;
     transition: all 0.2s;
+    user-select: none;
 }
 
 .enemy>img:hover{
