@@ -51,7 +51,7 @@ enemy.addEventListener("mouseup", handleRelease);
 // Добавляем обработчики для мобильных устройств с задержкой
 enemy.addEventListener("touchstart", (event) => {
     event.preventDefault();
-    touchTimeout = setTimeout(handlePress, 300);
+    touchTimeout = setTimeout(handlePress, 100);
 });
 
 enemy.addEventListener("touchend", handleRelease);
